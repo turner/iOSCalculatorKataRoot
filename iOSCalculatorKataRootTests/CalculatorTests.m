@@ -28,18 +28,7 @@
 
 -(void)testGivenCalculator_WhenGetOneNumberInput_ThenNumberIsReturned {
 
-    NSString *numbers = @"5";
-
-    int sum = [_sut add:numbers];
-
-    int expected = 5;
-    STAssertEquals(expected, sum, nil);
-
-}
-
--(void)testGivenCalculator_WhenGetTwoNumberInput_ThenSumIsReturned {
-
-    NSString *numbers = @"4,5";
+    NSString *numbers = @"9";
 
     int sum = [_sut add:numbers];
 
