@@ -37,4 +37,15 @@
 
 }
 
+-(void)testGivenCalculator_WhenGetTwoNumbersInput_ThenSumIsReturned {
+
+    NSString *numbers = @"6,13";
+
+    int sum = [_sut add:numbers];
+
+    int expected = 19;
+    STAssertEquals(expected, sum, nil);
+
+}
+
 @end
