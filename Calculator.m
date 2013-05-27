@@ -19,14 +19,18 @@
 
     [self guardCondition_DuplicateDelimitersNotAllowedWithNumbers:numbers];
 
-    if ([numbers rangeOfString:@","].location != NSNotFound) return [self sum:numbers];
+    if (YES == [self containsWithinNumbers:numbers delimiter:@","]) return [self sum:numbers];
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
 }
 
+- (BOOL)containsWithinNumbers:(NSString *)numbers delimiter:(NSString *)delimiter {
+    return [numbers rangeOfString:delimiter].location != NSNotFound;
+}
+
 - (void)guardCondition_DuplicateDelimitersNotAllowedWithNumbers:(NSString *)numbers {
 
-    if ([numbers rangeOfString:@",,"].location != NSNotFound)
+    if (YES == [self containsWithinNumbers:numbers delimiter:@",,"])
         [NSException raise:@"DuplicateDelimiterException" format:@"Duplicate delimiters not allowed."];
 
 }
