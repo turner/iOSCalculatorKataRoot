@@ -104,4 +104,8 @@
     STAssertEquals(expected, sum, @"sum %d should be %d", sum, expected);
 }
 
+-(void)test_GivenSUT_WhenInputContainsDuplicateDelimiter_ThenThrowExpectedException {
+
+    STAssertThrowsSpecificNamed([_sut add:@"7,5,\n8"], NSException, @"DuplicateDelimiterException", @"Did NOT throw expected exception. Duplicate delimiters not allowed.");
+}
 @end

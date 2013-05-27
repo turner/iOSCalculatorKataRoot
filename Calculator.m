@@ -9,17 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "Calculator.h"
 
-
 @implementation Calculator {
 
 }
+
 - (int)add:(NSString *)numbers {
 
     numbers = [self handleNewlineDelimiter:numbers];
 
+    [self guardCondition_DuplicateDelimitersNotAllowedWithNumbers:numbers];
+
     if ([numbers rangeOfString:@","].location != NSNotFound) return [self sum:numbers];
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (void)guardCondition_DuplicateDelimitersNotAllowedWithNumbers:(NSString *)numbers {
+
+    if ([numbers rangeOfString:@",,"].location != NSNotFound)
+        [NSException raise:@"DuplicateDelimiterException" format:@"Duplicate delimiters not allowed."];
+
 }
 
 - (NSString *)handleNewlineDelimiter:(NSString *)numbers {
