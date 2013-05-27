@@ -23,10 +23,8 @@
 }
 
 - (NSString *)handleNewlineDelimiter:(NSString *)numbers {
-    if ([numbers rangeOfString:@"\n"].location != NSNotFound) {
-        numbers = [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
-    }
-    return numbers;
+
+    return [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
 }
 
 - (int)sum:(NSString *)numbers {
