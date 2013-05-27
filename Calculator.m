@@ -15,11 +15,18 @@
 }
 - (int)add:(NSString *)numbers {
 
-//    NSLog(@"numbers %@. int value %d", numbers, [numbers intValue]);
+    numbers = [self handleNewlineDelimiter:numbers];
 
     if ([numbers rangeOfString:@","].location != NSNotFound) return [self sum:numbers];
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (NSString *)handleNewlineDelimiter:(NSString *)numbers {
+    if ([numbers rangeOfString:@"\n"].location != NSNotFound) {
+        numbers = [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
+    }
+    return numbers;
 }
 
 - (int)sum:(NSString *)numbers {

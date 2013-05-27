@@ -89,5 +89,19 @@
     STAssertEquals(expected, sum, @"sum %d should be %d", sum, expected);
 }
 
+-(void)test_GivenSUT_WhenInputNumbersListContainsNewlineDelimiter_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"7,5\n8";
+
+    // set expectations
+    int expected = 20;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(expected, sum, @"sum %d should be %d", sum, expected);
+}
 
 @end
