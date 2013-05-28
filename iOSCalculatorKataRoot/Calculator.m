@@ -15,12 +15,20 @@
 }
 - (int)add:(NSString *)numbers {
 
+    // turn all delimiters into commas
     numbers = [self handleContainsWithin:numbers delimiter:@"\n"];
+
+    [self guardCondition_RejectDuplicateDelimitersWithinNumbers:numbers];
 
     if (YES == [self containsWithin:numbers delimiter:@"," ]) return [self sum:numbers];
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
 
+}
+
+- (void)guardCondition_RejectDuplicateDelimitersWithinNumbers:(NSString *)numbers {
+
+    if (YES == [self containsWithin:numbers delimiter:@",,"]) [NSException raise:@"DuplicateDelimiterException" format:@""];
 }
 
 - (NSString *)handleContainsWithin:(NSString *)numbers delimiter:(NSString *)delimiter {

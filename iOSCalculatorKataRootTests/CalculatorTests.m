@@ -106,4 +106,13 @@
 
 }
 
+-(void)test_GivenCalculator_WhenInputContainsDuplicateDelimiters_ThenThrowsExpectException {
+
+//    STAssertThrowsSpecificNamed([sut add:@"3\n,4,5"], NSException, @"DuplicateDelimitersException", @"You cannot input duplicate delimiters.");
+
+    // setup
+    NSString *numbers = @"3\n,4,5";
+    STAssertThrowsSpecificNamed([_sut add:numbers], NSException, @"DuplicateDelimiterException", @"");
+
+}
 @end
