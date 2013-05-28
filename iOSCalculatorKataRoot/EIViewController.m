@@ -9,6 +9,9 @@
 #import "EIViewController.h"
 
 @interface EIViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *inputTextField;
+@property (strong, nonatomic) IBOutlet UITextField *outputTextField;
+- (IBAction)addButton:(id)sender;
 
 @end
 
@@ -19,5 +22,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
-
+- (IBAction)addButton:(id)sender {
+}
 @end
