@@ -108,11 +108,26 @@
 
 -(void)test_GivenCalculator_WhenInputContainsDuplicateDelimiters_ThenThrowsExpectException {
 
-//    STAssertThrowsSpecificNamed([sut add:@"3\n,4,5"], NSException, @"DuplicateDelimitersException", @"You cannot input duplicate delimiters.");
-
-    // setup
     NSString *numbers = @"3\n,4,5";
     STAssertThrowsSpecificNamed([_sut add:numbers], NSException, @"DuplicateDelimiterException", @"");
 
 }
+
+-(void)test_GivenCalculator_WhenInputContainsCustomDelimiter_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"//%\n3%5%2,4%6";
+
+    // set expectations
+    int expected = 20;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(expected, sum, @"sum %d should be %d", sum, expected);
+
+
+}
+
 @end

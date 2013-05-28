@@ -16,7 +16,7 @@
 - (int)add:(NSString *)numbers {
 
     // turn all delimiters into commas
-    numbers = [self handleContainsWithin:numbers delimiter:@"\n"];
+    numbers = [self handleCustomDelimiterContainedWithinNumbers:numbers];
 
     [self guardCondition_RejectDuplicateDelimitersWithinNumbers:numbers];
 
@@ -31,8 +31,20 @@
     if (YES == [self containsWithin:numbers delimiter:@",,"]) [NSException raise:@"DuplicateDelimiterException" format:@""];
 }
 
-- (NSString *)handleContainsWithin:(NSString *)numbers delimiter:(NSString *)delimiter {
-    return [numbers stringByReplacingOccurrencesOfString:delimiter withString:@","];
+- (NSString *)handleCustomDelimiterContainedWithinNumbers:(NSString *)numbers {
+
+    if (YES == [numbers hasPrefix:@"//"]) {
+        NSString *prefix = [numbers substringWithRange:NSMakeRange(0, 4)];
+        NSString *delimiter = [prefix substringWithRange:NSMakeRange(2, 1)];
+
+        NSString *suffix = [numbers substringWithRange:NSMakeRange([prefix length], [numbers length] - [prefix length])];
+
+        NSLog(@"prefix %@. delimiter %@. suffix %@", prefix, delimiter, suffix);
+
+        return [suffix stringByReplacingOccurrencesOfString:delimiter withString:@","];
+    }
+
+    return [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
 }
 
 - (BOOL)containsWithin:(NSString *)numbers delimiter:(NSString *)delimiter {
