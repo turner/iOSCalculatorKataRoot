@@ -15,10 +15,16 @@
 }
 - (int)add:(NSString *)numbers {
 
+    numbers = [self handleContainsWithin:numbers delimiter:@"\n"];
+
     if (YES == [self containsWithin:numbers delimiter:@"," ]) return [self sum:numbers];
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
 
+}
+
+- (NSString *)handleContainsWithin:(NSString *)numbers delimiter:(NSString *)delimiter {
+    return [numbers stringByReplacingOccurrencesOfString:delimiter withString:@","];
 }
 
 - (BOOL)containsWithin:(NSString *)numbers delimiter:(NSString *)delimiter {

@@ -89,4 +89,21 @@
 
 }
 
+-(void)test_GivenCalculator_WhenInputDelimiterIsNewline_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"9,7\n4";
+
+    // set expectations
+    int expected = 20;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(expected, sum, @"sum %d should be %d", sum, expected);
+
+
+}
+
 @end
