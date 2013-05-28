@@ -29,7 +29,8 @@
 
 - (void)guardCondition_RejectDuplicateDelimitersWithinNumbers:(NSString *)numbers {
 
-    if (YES == [self containsWithin:numbers delimiter:@",,"]) [NSException raise:@"DuplicateDelimiterException" format:@""];
+    if (YES == [self containsWithin:numbers delimiter:@",,"])
+        [NSException raise:@"DuplicateDelimiterException" format:@""];
 }
 
 - (NSString *)handleCustomDelimiterContainedWithinNumbers:(NSString *)numbers {
@@ -59,8 +60,19 @@
 
     int total = 0;
     for (NSString *number in tokens) {
+
+        [self guardCondition_RejectNegativeNumber:number];
+
         total += [number intValue];
     }
+
     return total;
 }
+
+- (void)guardCondition_RejectNegativeNumber:(NSString *)number {
+
+    if ([number intValue] < 0) [NSException raise:@"NegativeNumberException" format:@""];
+
+}
+
 @end
