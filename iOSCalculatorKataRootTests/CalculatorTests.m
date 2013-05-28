@@ -66,4 +66,27 @@
 
 }
 
+-(void)test_GivenCalculator_WhenInputIsAnyLengthListOfNumbers_ThenReturnSum {
+
+    // setup
+    int howmany = arc4random() % 999;
+    NSMutableString *numbers = [NSMutableString string];
+
+    // set expectations
+    int expected = 0;
+
+    // perform test
+    for (int i = 0; i < howmany; i++) {
+        [numbers appendString:[NSString stringWithFormat:@"%d,", i]];
+        expected += i;
+    }
+
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(expected, sum, @"sum %d should be %d", sum, expected);
+
+
+}
+
 @end
