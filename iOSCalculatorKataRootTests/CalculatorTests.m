@@ -45,4 +45,19 @@
     STAssertEquals(sum, expected, @"sum %d should equal expected %d", sum, expected);
 }
 
+-(void)test_GivenCalculator_WhenInputIsTwoNumbers_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"6,4";
+
+    // set expectations
+    int expected = 10;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expected, @"sum %d should equal expected %d", sum, expected);
+}
+
 @end
