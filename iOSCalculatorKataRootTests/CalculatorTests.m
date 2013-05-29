@@ -96,7 +96,7 @@
 }
 
 -(void)test_GivenCalculator_WhenInputContainsDuplicateDelimiters_ThenExpectedExceptionThrown {
-    STAssertThrowsSpecificNamed([_sut add:@"4,5,,"], NSException, @"DuplicateDelimiterException", @"");
+    STAssertThrowsSpecificNamed([_sut add:@"4\n5\n,6"], NSException, @"DuplicateDelimiterException", @"");
 }
 
 @end
