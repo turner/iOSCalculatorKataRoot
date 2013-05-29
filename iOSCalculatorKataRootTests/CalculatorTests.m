@@ -99,4 +99,19 @@
     STAssertThrowsSpecificNamed([_sut add:@"4\n5\n,6"], NSException, @"DuplicateDelimiterException", @"");
 }
 
+-(void)test_GivenCalculator_WhenInputContainsCustomDelimiter_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"//%\n1%2%3,4";
+
+    // set expectations
+    int expected = 10;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expected, @"sum %d should equal expected %d", sum, expected);
+}
+
 @end
