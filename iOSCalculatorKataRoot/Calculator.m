@@ -17,11 +17,19 @@
 
     numbers = [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
 
+    [self guardCondition_RejectDuplicateDelimitersWithNumbers:numbers];
+
     if (YES == [self containsWithinNumbers:numbers delimiter:@","]) {
         return [self sum:numbers];
     }
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (void)guardCondition_RejectDuplicateDelimitersWithNumbers:(NSString *)numbers {
+    if (YES == [self containsWithinNumbers:numbers delimiter:@",,"]) {
+        [NSException raise:@"DuplicateDelimiterException" format:@""];
+    }
 }
 
 - (int)sum:(NSString *)numbers {

@@ -95,4 +95,8 @@
     STAssertEquals(sum, expected, @"sum %d should equal expected %d", sum, expected);
 }
 
+-(void)test_GivenCalculator_WhenInputContainsDuplicateDelimiters_ThenExpectedExceptionThrown {
+    STAssertThrowsSpecificNamed([_sut add:@"4,5,,"], NSException, @"DuplicateDelimiterException", @"");
+}
+
 @end
