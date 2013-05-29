@@ -30,4 +30,19 @@
     STAssertEquals(sum, expected, @"sum %d should equal expected %d", sum, expected);
 }
 
+-(void)test_GivenCalculator_WhenInputIsOneNumber_ThenReturnNumber {
+
+    // setup
+    NSString *numbers = @"5";
+
+    // set expectations
+    int expected = 5;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expected, @"sum %d should equal expected %d", sum, expected);
+}
+
 @end
