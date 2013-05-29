@@ -95,7 +95,7 @@
     STAssertEquals(sum, expected, @"sum %d should equal expected %d", sum, expected);
 }
 
--(void)test_GivenCalculator_WhenInputContainsDuplicateDelimiters_ThenExpectedExceptionThrown {
+-(void)test_GivenCalculator_WhenInputContainsDuplicateDelimiters_ThenThrowExpectedException {
     STAssertThrowsSpecificNamed([_sut add:@"4\n5\n,6"], NSException, @"DuplicateDelimiterException", @"");
 }
 
@@ -112,6 +112,10 @@
 
     // verify test
     STAssertEquals(sum, expected, @"sum %d should equal expected %d", sum, expected);
+}
+
+-(void)test_GivenCalculator_WhenInputContainsNegativeNumber_ThenThrowExpectedException {
+    STAssertThrowsSpecificNamed([_sut add:@"2,3,-4,-5"], NSException, @"NegativeNumberException", @"");
 }
 
 @end

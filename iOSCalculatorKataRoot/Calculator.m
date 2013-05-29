@@ -15,11 +15,7 @@
 }
 - (int)add:(NSString *)numbers {
 
-    if (YES == [numbers hasPrefix:@"//"]) {
-        NSString *delimiter = [numbers substringWithRange:NSMakeRange(2, 1)];
-        NSString *suffix = [numbers substringWithRange:NSMakeRange(4, [numbers length] - 4)];
-        numbers = [suffix stringByReplacingOccurrencesOfString:delimiter withString:@","];
-    }
+    numbers = [self handleCustomDelimiter:numbers];
 
     numbers = [self handleNewLineDelimiter:numbers];
 
@@ -30,6 +26,15 @@
     }
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (NSString *)handleCustomDelimiter:(NSString *)numbers {
+    if (YES == [numbers hasPrefix:@"//"]) {
+        NSString *delimiter = [numbers substringWithRange:NSMakeRange(2, 1)];
+        NSString *suffix = [numbers substringWithRange:NSMakeRange(4, [numbers length] - 4)];
+        numbers = [suffix stringByReplacingOccurrencesOfString:delimiter withString:@","];
+    }
+    return numbers;
 }
 
 - (NSString *)handleNewLineDelimiter:(NSString *)numbers {
@@ -47,8 +52,11 @@
     NSArray *tokens = [numbers componentsSeparatedByString:@","];
     int total = 0;
     for (NSString *token in tokens) {
-            total += [token intValue];
-        }
+        int number = [token intValue];
+
+        if (number < 0) [NSException raise:@"NegativeNumberException" format:@""];
+        total += number;
+    }
     return total;
 }
 
