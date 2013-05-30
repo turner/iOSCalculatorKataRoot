@@ -116,4 +116,21 @@
 
     STAssertThrowsSpecificNamed([_sut add:@"2,3,,5"], NSException, @"DuplicateDelimitersException", @"");
 }
+
+-(void)test_GivenCalculator_WhenInputContainsCustomLineDelimiter_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"//$\n4$8,12";
+
+    // set expectations
+    int expectation = 24;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expectation, nil);
+
+}
+
 @end

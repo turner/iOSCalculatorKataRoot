@@ -15,15 +15,28 @@
 }
 - (int)add:(NSString *)numbers {
 
+    if (YES == [numbers hasPrefix:@"//"]) {
+        NSString *delimiter = [numbers substringWithRange:NSMakeRange(2, 1)];
+        NSString *suffix = [numbers substringWithRange:NSMakeRange(4, [numbers length] - 4)];
+        numbers = [suffix stringByReplacingOccurrencesOfString:delimiter withString:@","];
+    }
+
     numbers = [self handleNewLineDelimiterWithinNumbers:numbers];
 
-    if ([numbers rangeOfString:@",,"].location != NSNotFound) [NSException raise:@"DuplicateDelimitersException" format:@""];
+    [self guardCondition_RejectDuplicateDelimitersWithinNumbers:numbers];
 
     if (YES == [self containsWithinNumbers:numbers delimiter:@","]) {
         return [self sumNumbers:numbers];
     }
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (void)guardCondition_RejectDuplicateDelimitersWithinNumbers:(NSString *)numbers {
+
+    if ([numbers rangeOfString:@",,"].location != NSNotFound)
+        [NSException raise:@"DuplicateDelimitersException" format:@""];
+
 }
 
 - (NSString *)handleNewLineDelimiterWithinNumbers:(NSString *)numbers {
