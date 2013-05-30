@@ -96,4 +96,24 @@
 
 }
 
+-(void)test_GivenCalculator_WhenInputContainsNewLineDelimiter_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"4,8\n12";
+
+    // set expectations
+    int expectation = 24;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expectation, nil);
+
+}
+
+-(void)test_GivenCalculator_WhenInputContainsDuplicateDelimiters_ThenThrowExpectedException {
+
+    STAssertThrowsSpecificNamed([_sut add:@"2,3,,5"], NSException, @"DuplicateDelimitersException", @"");
+}
 @end

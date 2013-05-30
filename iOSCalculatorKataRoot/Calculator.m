@@ -15,11 +15,19 @@
 }
 - (int)add:(NSString *)numbers {
 
+    numbers = [self handleNewLineDelimiterWithinNumbers:numbers];
+
+    if ([numbers rangeOfString:@",,"].location != NSNotFound) [NSException raise:@"DuplicateDelimitersException" format:@""];
+
     if (YES == [self containsWithinNumbers:numbers delimiter:@","]) {
         return [self sumNumbers:numbers];
     }
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (NSString *)handleNewLineDelimiterWithinNumbers:(NSString *)numbers {
+    return [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
 }
 
 - (int)sumNumbers:(NSString *)numbers {
