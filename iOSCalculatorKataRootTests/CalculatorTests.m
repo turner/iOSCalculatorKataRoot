@@ -59,4 +59,20 @@
 
 }
 
+-(void)test_GivenCalculator_WhenInputIsTwoNumbers_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"4,8";
+
+    // set expectations
+    int expectation = 12;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expectation, nil);
+
+}
+
 @end
