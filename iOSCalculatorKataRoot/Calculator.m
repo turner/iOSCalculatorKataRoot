@@ -13,13 +13,10 @@
 @implementation Calculator {
 
 }
+
 - (int)add:(NSString *)numbers {
 
-    if (YES == [numbers hasPrefix:@"//"]) {
-        NSString *delimiter = [numbers substringWithRange:NSMakeRange(2, 1)];
-        NSString *suffix = [numbers substringWithRange:NSMakeRange(4, [numbers length] - 4)];
-        numbers = [suffix stringByReplacingOccurrencesOfString:delimiter withString:@","];
-    }
+    numbers = [self handleCustomDelimiterWithinNumbers:numbers];
 
     numbers = [self handleNewLineDelimiterWithinNumbers:numbers];
 
@@ -29,7 +26,17 @@
         return [self sumNumbers:numbers];
     }
 
+    [self guardCondition_RejectNegativeNumber:numbers];
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (NSString *)handleCustomDelimiterWithinNumbers:(NSString *)numbers {
+    if (YES == [numbers hasPrefix:@"//"]) {
+        NSString *delimiter = [numbers substringWithRange:NSMakeRange(2, 1)];
+        NSString *suffix = [numbers substringWithRange:NSMakeRange(4, [numbers length] - 4)];
+        numbers = [suffix stringByReplacingOccurrencesOfString:delimiter withString:@","];
+    }
+    return numbers;
 }
 
 - (void)guardCondition_RejectDuplicateDelimitersWithinNumbers:(NSString *)numbers {
@@ -47,9 +54,16 @@
     NSArray *tokens = [numbers componentsSeparatedByString:@","];
     int total = 0;
     for (NSString *token in tokens) {
-            total += [token intValue];
-        }
+
+        [self guardCondition_RejectNegativeNumber:token];
+        total += [token intValue];
+    }
     return total;
+}
+
+- (void)guardCondition_RejectNegativeNumber:(NSString *)number {
+
+    if ([number intValue] < 0) [NSException raise:@"NegativeNumberException" format:@""];
 }
 
 - (BOOL)containsWithinNumbers:(NSString *)numbers delimiter:(NSString *)delimiter {

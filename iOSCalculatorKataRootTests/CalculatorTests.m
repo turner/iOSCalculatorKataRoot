@@ -133,4 +133,11 @@
 
 }
 
+-(void)test_GivenCalculator_WhenInputContainsNegativeNumbers_ThenThrowExpectedException {
+
+    STAssertThrowsSpecificNamed([_sut add:@"-5"], NSException, @"NegativeNumberException", @"");
+
+//    STAssertThrowsSpecificNamed([_sut add:@"2,3,-4,-5"], NSException, @"NegativeNumberException", @"");
+}
+
 @end
