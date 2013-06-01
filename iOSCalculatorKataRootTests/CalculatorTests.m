@@ -114,4 +114,8 @@
     STAssertEquals(sum, expectations, @"sum does not equal expected value");
 }
 
+-(void)test_GivenSUT_WhenInputContainsNegativeNumbers_ThrowExpectedException {
+    STAssertThrowsSpecificNamed([_sut add:@"7\n3\n-10"], NSException, @"NegativeNumbersException", @"");
+}
+
 @end
