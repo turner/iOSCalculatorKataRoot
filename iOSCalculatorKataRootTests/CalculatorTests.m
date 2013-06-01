@@ -99,4 +99,19 @@
     STAssertThrowsSpecificNamed([_sut add:@"7,3,\n10"], NSException, @"DuplicateDelimiterException", @"");
 }
 
+-(void)test_GivenSUT_WhenInputContainsCustonDelimiter_ThenReturnNumber {
+
+    // setup
+    NSString *numbers = @"//$\n7$3$10,20";
+
+    // expectations
+    int expectations = 40;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expectations, @"sum does not equal expected value");
+}
+
 @end

@@ -26,8 +26,15 @@
 
 - (IBAction)addNumbersButton:(id)sender {
 
-    Calculator *calculator = [[Calculator alloc] init];
-    int sum = [calculator add:self.inputTextField.text];
-    self.outputTextField.text = [NSString stringWithFormat:@"%d", sum];
+    @try {
+        Calculator *calculator = [[Calculator alloc] init];
+        int sum = [calculator add:self.inputTextField.text];
+        self.outputTextField.text = [NSString stringWithFormat:@"%d", sum];
+    }
+
+    @catch (NSException *e) {
+        self.outputTextField.text = [NSString stringWithFormat:@"%@", e.name];
+    }
+
 }
 @end
