@@ -15,12 +15,18 @@
 }
 - (int)add:(NSString *)numbers {
 
+    numbers = [self handleNewlineDelimitersWithinNumbers:numbers];
+
     if ([self containsWIthinNumbers:numbers delimiter:@"," ]) {
         return [self sumNumbers:numbers];
 
     }
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (NSString *)handleNewlineDelimitersWithinNumbers:(NSString *)numbers {
+    return [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
 }
 
 - (BOOL)containsWIthinNumbers:(NSString *)numbers delimiter:(NSString *)delimiter {
