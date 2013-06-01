@@ -7,6 +7,7 @@
 //
 
 #import "EIViewController.h"
+#import "Calculator.h"
 
 @interface EIViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *inputTextField;
@@ -24,7 +25,9 @@
 }
 
 - (IBAction)addNumbersButton:(id)sender {
-    
-    NSLog(@"Hello World");
+
+    Calculator *calculator = [[Calculator alloc] init];
+    int sum = [calculator add:self.inputTextField.text];
+    self.outputTextField.text = [NSString stringWithFormat:@"%d", sum];
 }
 @end
