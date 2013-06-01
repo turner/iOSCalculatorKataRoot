@@ -59,4 +59,24 @@
     STAssertEquals(sum, expectations, @"sum does not equal expected value");
 }
 
+-(void)test_GivenSUT_WhenInputIsListOfNumbers_ThenReturnNumber {
+
+    // setup
+    int howmany = arc4random() % 1000;
+    NSMutableString *numbers = [NSMutableString string];
+
+    // expectations
+    int expectations = 0;
+
+    // perform test
+    for (int i=0; i < howmany; i++) {
+        [numbers appendString:[NSString stringWithFormat:@"%d,", i]];
+        expectations += i;
+    }
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expectations, @"sum does not equal expected value");
+}
+
 @end
