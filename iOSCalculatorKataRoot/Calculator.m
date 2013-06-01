@@ -17,12 +17,22 @@
 
     numbers = [self handleNewlineDelimitersWithinNumbers:numbers];
 
+    [self guardCondition_RejectDuplicateDelimitersWithinNumbers:numbers];
+
     if ([self containsWIthinNumbers:numbers delimiter:@"," ]) {
         return [self sumNumbers:numbers];
 
     }
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (void)guardCondition_RejectDuplicateDelimitersWithinNumbers:(NSString *)numbers {
+
+    if ([numbers rangeOfString:@",,"].location != NSNotFound) {
+        [NSException raise:@"DuplicateDelimiterException" format:@""];
+    }
+
 }
 
 - (NSString *)handleNewlineDelimitersWithinNumbers:(NSString *)numbers {

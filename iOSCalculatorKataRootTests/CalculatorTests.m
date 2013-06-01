@@ -95,8 +95,8 @@
     STAssertEquals(sum, expectations, @"sum does not equal expected value");
 }
 
--(void)test_GivenSUT_WhenInputContainsTrailingNewline_ThrowExpectedException {
-    STAssertThrowsSpecific([_sut add:@"7,3\n"], NSException, @"NewlineDelimiterException");
+-(void)test_GivenSUT_WhenInputContainsDuplicateDelimiters_ThrowExpectedException {
+    STAssertThrowsSpecificNamed([_sut add:@"7,3,\n10"], NSException, @"DuplicateDelimiterException", @"");
 }
 
 @end
