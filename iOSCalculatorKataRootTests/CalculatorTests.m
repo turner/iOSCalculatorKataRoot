@@ -99,7 +99,7 @@
     STAssertThrowsSpecificNamed([_sut add:@"7,3,\n10"], NSException, @"DuplicateDelimiterException", @"");
 }
 
--(void)test_GivenSUT_WhenInputContainsCustonDelimiter_ThenReturnNumber {
+-(void)test_GivenSUT_WhenInputContainsCustomDelimiter_ThenReturnNumber {
 
     // setup
     NSString *numbers = @"//$\n7$3$10,20";
