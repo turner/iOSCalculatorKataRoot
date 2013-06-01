@@ -6,6 +6,7 @@
 //
 
 
+#import <Foundation/Foundation.h>
 #import "Calculator.h"
 
 
@@ -13,6 +14,26 @@
 
 }
 - (int)add:(NSString *)numbers {
+
+    if ([self containsWIthinNumbers:numbers delimiter:@"," ]) {
+        return [self sumNumbers:numbers];
+
+    }
+
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (BOOL)containsWIthinNumbers:(NSString *)numbers delimiter:(NSString *)delimiter {
+    return [numbers rangeOfString:delimiter].location != NSNotFound;
+}
+
+- (int)sumNumbers:(NSString *)numbers {
+    NSArray *tokens = [numbers componentsSeparatedByString:@","];
+    int total = 0;
+    for (NSString *token in tokens) {
+            total += [token intValue];
+        }
+
+    return total;
 }
 @end

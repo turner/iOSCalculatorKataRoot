@@ -44,4 +44,19 @@
     STAssertEquals(sum, expectations, @"sum does not equal expected value");
 }
 
+-(void)test_GivenSUT_WhenInputIsTwoNumbers_ThenReturnNumber {
+
+    // setup
+    NSString *numbers = @"7,3";
+
+    // expectations
+    int expectations = 10;
+
+    // perform test
+    int sum = [_sut add:numbers];
+
+    // verify test
+    STAssertEquals(sum, expectations, @"sum does not equal expected value");
+}
+
 @end
