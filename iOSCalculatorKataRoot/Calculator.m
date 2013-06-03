@@ -15,7 +15,9 @@
 }
 - (int)add:(NSString *)numbers {
 
-    numbers = [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
+    numbers = [self handleNewlineDelimiterWithinNumbers:numbers];
+
+    [self guardCondition_RejectDuplicateDelimitersWithinNumbers:numbers];
 
     if (YES == [self containsWithinNumbers:numbers delimiter:@"," ]) {
 
@@ -23,6 +25,17 @@
     }
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (void)guardCondition_RejectDuplicateDelimitersWithinNumbers:(NSString *)numbers {
+
+    if (YES == [self containsWithinNumbers:numbers delimiter:@",,"])
+        [NSException raise:@"DuplicateDelimitersException" format:@""];
+
+}
+
+- (NSString *)handleNewlineDelimiterWithinNumbers:(NSString *)numbers {
+    return [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
 }
 
 - (BOOL)containsWithinNumbers:(NSString *)numbers delimiter:(NSString *)delimiter {
