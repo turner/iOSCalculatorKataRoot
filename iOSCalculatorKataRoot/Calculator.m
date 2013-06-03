@@ -21,7 +21,7 @@
 
     [self guardCondition_RejectDuplicateDelimitersWithinNumbers:numbers];
 
-    if (YES == [self containsWithinNumbers:numbers delimiter:@"," ]) {
+    if (YES == [self containsWithinNumbers:numbers delimiter:@","]) {
 
         return [self sumNumbers:numbers];
     }
@@ -59,8 +59,12 @@
     NSArray *tokens = [numbers componentsSeparatedByString:@","];
     int total = 0;
     for (NSString *token in tokens) {
-            total += [token intValue];
-        }
+
+        if ([token intValue] < 0)
+            [NSException raise:@"NegativeNumbersException" format:@""];
+
+        total += [token intValue];
+    }
 
     return total;
 }
