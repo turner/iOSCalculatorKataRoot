@@ -125,4 +125,9 @@
 
 }
 
+-(void)test_GivenSUT_WhenInputContainsNegativeNumbers_ThrowExpectedException {
+    NSString *numbers = @"3,7,-4,-6";
+    STAssertThrowsSpecificNamed([_sut add:numbers], NSException, @"NegativeNumbersException", @"");
+}
+
 @end
