@@ -15,6 +15,14 @@
 }
 - (int)add:(NSString *)numbers {
 
+    if (YES == [self containsWithinNumbers:numbers delimiter:@"//"]) {
+
+        NSString *delimiter = [numbers substringWithRange:NSMakeRange(2, 1)];
+        NSString *suffix = [numbers substringWithRange:NSMakeRange(4, [numbers length] - 4)];
+        numbers = [suffix stringByReplacingOccurrencesOfString:delimiter withString:@","];
+
+    }
+
     numbers = [self handleNewlineDelimiterWithinNumbers:numbers];
 
     [self guardCondition_RejectDuplicateDelimitersWithinNumbers:numbers];
