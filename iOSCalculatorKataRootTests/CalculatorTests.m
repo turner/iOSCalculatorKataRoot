@@ -50,4 +50,20 @@
     STAssertEquals(sum, expectations, @"sum should equal expectations");
 
 }
+
+-(void)test_GivenSUT_WhenInputIsTwoNumbers_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"3,7,6,4";
+
+    // expectations
+    int expectations = 20;
+
+    // test
+    int sum = [_sut add:numbers];
+
+    // verify
+    STAssertEquals(sum, expectations, @"sum should equal expectations");
+
+}
 @end
