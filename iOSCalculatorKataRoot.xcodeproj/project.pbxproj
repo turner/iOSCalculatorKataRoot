@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC986024DFE4CEBCDFF8C3B8 /* EIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC98626A0614CAFB6DF4DCA9 /* EIAppDelegate.m */; };
+		CC9860A3A6FC368F7D2F18ED /* SanityCheckTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC986CA4DC2EC6FEE54EF6AB /* SanityCheckTests.m */; };
 		CC98611A7E7DE838751BEA75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC986B80AD908FAF3BE9CBAE /* InfoPlist.strings */; };
 		CC9861741EAD99B5C1665DBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC986CEF7A7FE3066B5F938F /* Default-568h@2x.png */; };
 		CC9861C78293923812E2F249 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC986EC3B33120EF27019A7D /* SenTestingKit.framework */; };
@@ -19,6 +20,7 @@
 		CC9867152715F24132B01376 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9863921DCFFA83CB56E1E1 /* Foundation.framework */; };
 		CC986A034914B3ACD9750B4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC986BC72998F087FDD8142C /* CoreGraphics.framework */; };
 		CC986B1245D2344BD9900723 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9864F64036612AB0D0837F /* main.m */; };
+		CC986C48A49824850D598C40 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9863543AAE570C4213FE33 /* libOCMock.a */; };
 		CC986E3B24BFDA2C5F576A08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC986A6A004FB0F24383A222 /* InfoPlist.strings */; };
 		CC986E7E4F01A227B3518138 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9863921DCFFA83CB56E1E1 /* Foundation.framework */; };
 		CC986ECDEB85E8B60FEB1C9A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC986748BFE5F565D2CC53B1 /* Default@2x.png */; };
@@ -35,15 +37,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC986041D9A671D2DF41280E /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
 		CC9860472D07BA50D6192787 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CC98608529C3FCA4D915E17A /* iOSCalculatorKataRoot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "iOSCalculatorKataRoot-Info.plist"; sourceTree = "<group>"; };
 		CC9860983C8412248466962C /* iOSCalculatorKataRoot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSCalculatorKataRoot-Prefix.pch"; sourceTree = "<group>"; };
+		CC98610967D19199A1830BCA /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		CC98626A0614CAFB6DF4DCA9 /* EIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EIAppDelegate.m; sourceTree = "<group>"; };
+		CC98626D83151E6629499422 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		CC9863543AAE570C4213FE33 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = Lib/OCMock/iOS/libOCMock.a; sourceTree = "<group>"; };
 		CC9863921DCFFA83CB56E1E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CC986491B73542EE2CF0CBBB /* EIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EIAppDelegate.h; sourceTree = "<group>"; };
 		CC9864F64036612AB0D0837F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC986578D8A6CCE898CA3CDD /* iOSCalculatorKataRoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCalculatorKataRoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9866230FB96A7D36A041B7 /* EIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EIViewController.m; sourceTree = "<group>"; };
+		CC9866E0C716103AD140F0D5 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		CC98670E2E93759E47D7F7D2 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		CC98671A80BACAE695F7A578 /* EIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EIViewController.h; sourceTree = "<group>"; };
 		CC98672D312E76886542EEA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CC986748BFE5F565D2CC53B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -51,10 +59,13 @@
 		CC9868B91190F136DE2F0859 /* iOSCalculatorKataRootTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCalculatorKataRootTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC986999F81371B1907B2747 /* iOSCalculatorKataRootTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "iOSCalculatorKataRootTests-Info.plist"; sourceTree = "<group>"; };
 		CC986BC72998F087FDD8142C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CC986CA4DC2EC6FEE54EF6AB /* SanityCheckTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityCheckTests.m; sourceTree = "<group>"; };
+		CC986CA6D94C40F6B40E76B0 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
 		CC986CEF7A7FE3066B5F938F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CC986DD5E5BE243CC23FE067 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CC986EC3B33120EF27019A7D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CC986F12A0047DB28A349C6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CC986FF4534FC7C34C621B0B /* ISanityCheckRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISanityCheckRepository.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +86,7 @@
 				CC9861C78293923812E2F249 /* SenTestingKit.framework in Frameworks */,
 				CC98620BF0CDA734F2E6498F /* UIKit.framework in Frameworks */,
 				CC986E7E4F01A227B3518138 /* Foundation.framework in Frameworks */,
+				CC986C48A49824850D598C40 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +100,7 @@
 				CC98637C74E0054064D1199B /* Frameworks */,
 				CC98649517F777D6CFD20590 /* iOSCalculatorKataRoot */,
 				CC9866386A550BD0F84B6BD0 /* iOSCalculatorKataRootTests */,
+				CC986F956B7D08065859D8BC /* Lib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +113,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CC9863669D674847EAF2BE67 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				CC986A3AD76133563BBAE9B5 /* iOS */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
 		CC98637C74E0054064D1199B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +128,7 @@
 				CC9863921DCFFA83CB56E1E1 /* Foundation.framework */,
 				CC986BC72998F087FDD8142C /* CoreGraphics.framework */,
 				CC986EC3B33120EF27019A7D /* SenTestingKit.framework */,
+				CC9863543AAE570C4213FE33 /* libOCMock.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,6 +156,7 @@
 				CC986D26635618AE4CE3210B /* MainStoryboard.storyboard */,
 				CC98671A80BACAE695F7A578 /* EIViewController.h */,
 				CC9866230FB96A7D36A041B7 /* EIViewController.m */,
+				CC986FF4534FC7C34C621B0B /* ISanityCheckRepository.h */,
 			);
 			path = iOSCalculatorKataRoot;
 			sourceTree = "<group>";
@@ -151,8 +174,38 @@
 			isa = PBXGroup;
 			children = (
 				CC986166208C010ABFDFBB9A /* Supporting Files */,
+				CC986CA4DC2EC6FEE54EF6AB /* SanityCheckTests.m */,
 			);
 			path = iOSCalculatorKataRootTests;
+			sourceTree = "<group>";
+		};
+		CC986A3AD76133563BBAE9B5 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CC986A7CCB970B823689A0C7 /* OCMock */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		CC986A7CCB970B823689A0C7 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				CC98626D83151E6629499422 /* OCMArg.h */,
+				CC986CA6D94C40F6B40E76B0 /* OCMock.h */,
+				CC9866E0C716103AD140F0D5 /* OCMockObject.h */,
+				CC986041D9A671D2DF41280E /* OCMConstraint.h */,
+				CC98610967D19199A1830BCA /* OCMockRecorder.h */,
+				CC98670E2E93759E47D7F7D2 /* NSNotificationCenter+OCMAdditions.h */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		CC986F956B7D08065859D8BC /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				CC9863669D674847EAF2BE67 /* OCMock */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9860A3A6FC368F7D2F18ED /* SanityCheckTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +380,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSCalculatorKataRoot/iOSCalculatorKataRoot-Prefix.pch";
 				INFOPLIST_FILE = "iOSCalculatorKataRootTests/iOSCalculatorKataRootTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -396,6 +452,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSCalculatorKataRoot/iOSCalculatorKataRoot-Prefix.pch";
 				INFOPLIST_FILE = "iOSCalculatorKataRootTests/iOSCalculatorKataRootTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"Lib/OCMock/iOS/**",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					Lib/OCMock/iOS/libOCMock.a,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
