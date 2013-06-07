@@ -19,6 +19,7 @@
 		CC9866305D1DE34B5E852E0B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9860472D07BA50D6192787 /* Default.png */; };
 		CC98668B75C82CA5DFCF75AF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC986D26635618AE4CE3210B /* MainStoryboard.storyboard */; };
 		CC9867152715F24132B01376 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9863921DCFFA83CB56E1E1 /* Foundation.framework */; };
+		CC98690769365E26F39A2EA7 /* ScientificCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9868848345BB4EAD39A33B /* ScientificCalculator.m */; };
 		CC9869D8A0287AB710D624A1 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = CC986A7E61B08F04E9A0ECD3 /* Calculator.m */; };
 		CC986A034914B3ACD9750B4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC986BC72998F087FDD8142C /* CoreGraphics.framework */; };
 		CC986B1245D2344BD9900723 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9864F64036612AB0D0837F /* main.m */; };
@@ -48,6 +49,7 @@
 		CC98626D83151E6629499422 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
 		CC9863543AAE570C4213FE33 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = Lib/OCMock/iOS/libOCMock.a; sourceTree = "<group>"; };
 		CC9863921DCFFA83CB56E1E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CC98640E1E2D98A8EA0C5327 /* ScientificCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScientificCalculator.h; sourceTree = "<group>"; };
 		CC986491B73542EE2CF0CBBB /* EIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EIAppDelegate.h; sourceTree = "<group>"; };
 		CC9864F64036612AB0D0837F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC986578D8A6CCE898CA3CDD /* iOSCalculatorKataRoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCalculatorKataRoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,9 +61,11 @@
 		CC986748BFE5F565D2CC53B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CC98682C2EE8246544C2E92F /* CalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorTests.m; sourceTree = "<group>"; };
 		CC98686F0B4E1A8FD6EE67EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CC9868848345BB4EAD39A33B /* ScientificCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScientificCalculator.m; sourceTree = "<group>"; };
 		CC9868B91190F136DE2F0859 /* iOSCalculatorKataRootTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCalculatorKataRootTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9868CCD0E130026BBC37BC /* CalculatorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorTests.h; sourceTree = "<group>"; };
 		CC986999F81371B1907B2747 /* iOSCalculatorKataRootTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "iOSCalculatorKataRootTests-Info.plist"; sourceTree = "<group>"; };
+		CC986A24CD18E29E6A432F2E /* IScientificCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScientificCalculator.h; sourceTree = "<group>"; };
 		CC986A7E61B08F04E9A0ECD3 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		CC986BC72998F087FDD8142C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CC986BE25A7215D60DEC686E /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
@@ -165,6 +169,9 @@
 				CC986FF4534FC7C34C621B0B /* ISanityCheckRepository.h */,
 				CC986A7E61B08F04E9A0ECD3 /* Calculator.m */,
 				CC986BE25A7215D60DEC686E /* Calculator.h */,
+				CC986A24CD18E29E6A432F2E /* IScientificCalculator.h */,
+				CC9868848345BB4EAD39A33B /* ScientificCalculator.m */,
+				CC98640E1E2D98A8EA0C5327 /* ScientificCalculator.h */,
 			);
 			path = iOSCalculatorKataRoot;
 			sourceTree = "<group>";
@@ -340,6 +347,7 @@
 				CC986024DFE4CEBCDFF8C3B8 /* EIAppDelegate.m in Sources */,
 				CC9862ECEFB19D33DE411F94 /* EIViewController.m in Sources */,
 				CC9869D8A0287AB710D624A1 /* Calculator.m in Sources */,
+				CC98690769365E26F39A2EA7 /* ScientificCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

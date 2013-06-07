@@ -8,6 +8,8 @@
 
 #import "CalculatorTests.h"
 #import "Calculator.h"
+#import "IScientificCalculator.h"
+#import "ScientificCalculator.h"
 
 @implementation CalculatorTests {
     Calculator *_sut;
@@ -119,6 +121,17 @@
 
     // verify
     STAssertEquals(sum, expectation, nil);
+}
+
+-(void)test_GivenSUT_WhenCreatedWithScientificCalculator_ThenProperyIsNotNit {
+
+
+    id<IScientificCalculator>scientificCalculator = [[ScientificCalculator alloc] init];
+
+    int result = (int)[scientificCalculator sqrt:4.0];
+
+    STAssertEquals(result, 2, nil);
+
 }
 
 @end
