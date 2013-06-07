@@ -91,4 +91,19 @@
     STAssertEquals(sum, expectation, nil);
 }
 
+-(void)test_GivenSUT_WhenInputContainsNewlineDelimiter_ThenReturnSum {
+
+    // setup
+    NSString *numbers = @"7\n3\n6\n4";
+
+    // expectation
+    int expectation = 20;
+
+    // test
+    int sum = [_sut add:numbers];
+
+    // verify
+    STAssertEquals(sum, expectation, nil);
+}
+
 @end

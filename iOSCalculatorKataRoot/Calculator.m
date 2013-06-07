@@ -15,6 +15,8 @@
 }
 - (int)add:(NSString *)numbers {
 
+    numbers = [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
+
     if (YES == [self containsWithinNumbers:numbers delimiter:@","]) {
 
         return [self sum:numbers];
