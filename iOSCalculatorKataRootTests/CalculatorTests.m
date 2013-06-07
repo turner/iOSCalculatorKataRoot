@@ -70,4 +70,25 @@
     STAssertEquals(sum, expectation, nil);
 }
 
+-(void)test_GivenSUT_WhenInputIs_N_Numbers_ThenReturnSum {
+
+    // setup
+    int howmany = arc4random() % 1000;
+    NSMutableString *numbers = [NSMutableString string];
+
+    // expectation
+    int expectation = 0;
+
+    // test
+    for (int i=0; i < howmany; i++) {
+        [numbers appendString:[NSString stringWithFormat:@"%d,", i]];
+        expectation += i;
+    }
+
+    int sum = [_sut add:numbers];
+
+    // verify
+    STAssertEquals(sum, expectation, nil);
+}
+
 @end
