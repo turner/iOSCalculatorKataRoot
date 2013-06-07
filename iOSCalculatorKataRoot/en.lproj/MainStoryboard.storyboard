@@ -45,6 +45,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addNumbersButton:" destination="2" eventType="touchUpInside" id="GdO-vx-HIp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -67,15 +70,24 @@
                             <constraint firstItem="B5u-OT-NQZ" firstAttribute="leading" secondItem="Asa-kB-Ig6" secondAttribute="leading" type="default" id="o6e-Sh-fI3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="Asa-kB-Ig6" id="rOd-fd-7kv"/>
+                        <outlet property="outputTextField" destination="B5u-OT-NQZ" id="VJB-cE-b17"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156" y="0.0"/>
+            <point key="canvasLocation" x="48" y="-6"/>
         </scene>
     </scenes>
     <classes>
         <class className="EIViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addNumbersButton:"/>
+                <relationship kind="outlet" name="inputTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="outputTextField" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
