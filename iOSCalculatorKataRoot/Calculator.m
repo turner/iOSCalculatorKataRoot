@@ -5,14 +5,22 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
-#import <Foundation/Foundation.h>
 #import "Calculator.h"
-
+#import "IScientificCalculator.h"
 
 @implementation Calculator {
 
 }
+- (id)initWithScientificCalculator:(id <IScientificCalculator>)scientificCalculator {
+    self = [super init];
+    
+    if (nil != self) {
+        self.scientificCalculator = scientificCalculator;
+    }
+    
+    return self;
+}
+
 - (int)add:(NSString *)numbers {
 
     if ([numbers rangeOfString:@","].location != NSNotFound) {
@@ -25,4 +33,5 @@
     }
     return [numbers length] > 0 ? [numbers intValue] : 0;
 }
+
 @end

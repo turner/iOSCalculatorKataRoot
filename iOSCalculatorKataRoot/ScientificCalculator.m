@@ -11,16 +11,16 @@
 
 }
 
-- (double)squared:(double)input {
-    return input * input;
+- (NSNumber *)squared:(NSNumber *)input {
+    return [NSNumber numberWithDouble:[input doubleValue] * [input doubleValue]];
 }
 
-- (double)pow:(double)input power:(double)power {
-    return pow(input, power);
+- (NSNumber *)pow:(NSNumber *)input power:(NSNumber *)power {
+    return [NSNumber numberWithDouble:pow([input doubleValue], [power doubleValue])];
 }
 
-- (double)sqrt:(double)input {
-    return sqrt(input);
+- (NSNumber *)sqrt:(NSNumber *)input {
+    return [NSNumber numberWithDouble:sqrt([input doubleValue])];
 }
 
 @end

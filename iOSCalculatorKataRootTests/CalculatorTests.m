@@ -2,6 +2,8 @@
 #import "Calculator.h"
 #import "IScientificCalculator.h"
 #import "ScientificCalculator.h"
+#import "OCMockObject.h"
+#import "OCMockRecorder.h"
 
 @interface CalculatorTests : SenTestCase
 @end
@@ -85,4 +87,20 @@
     STAssertNotNil(scientificCalculator, nil);
 }
 
+- (void)test_GivenCalculatorWithScientificCalculatorMock_WhenInputsToPowerDifferFromExpectedInputsTestFailsAsItShould {
+
+    id scientificCalculator = [OCMockObject mockForProtocol:@protocol(IScientificCalculator)];
+    [[[scientificCalculator expect] andReturn:[NSNumber numberWithDouble:9]] pow:[NSNumber numberWithDouble:3]
+                                                                           power:[NSNumber numberWithDouble:2]];
+
+    Calculator *calculator = [[Calculator alloc] initWithScientificCalculator:scientificCalculator];
+
+    // this SHOULD - and does - fail because the inputs 2,2 differ from the expected inputs of 3,2.
+    (void) [calculator.scientificCalculator pow:[NSNumber numberWithDouble:2]
+                                          power:[NSNumber numberWithDouble:2]];
+
+
+    [scientificCalculator verify];
+
+}
 @end

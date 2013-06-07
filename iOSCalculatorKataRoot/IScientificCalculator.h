@@ -11,8 +11,7 @@
 @protocol IScientificCalculator <NSObject>
 
 @required
--(double)squared:(double)input;
-
-- (double)pow:(double)input power:(double)power;
--(double)sqrt:(double)input;
+-(NSNumber *)squared:(NSNumber *)input;
+- (NSNumber *)pow:(NSNumber *)input power:(NSNumber *)power;
+-(NSNumber *)sqrt:(NSNumber *)input;
 @end
