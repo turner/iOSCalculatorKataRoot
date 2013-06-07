@@ -15,7 +15,9 @@
 }
 - (int)add:(NSString *)numbers {
 
-    numbers = [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
+    numbers = [self handleCustomDelimiterWithinNumbers:numbers];
+
+    numbers = [self handleNewlineDelimiterWithinNumbers:numbers];
 
     if (YES == [self containsWithinNumbers:numbers delimiter:@","]) {
 
@@ -24,6 +26,19 @@
     }
 
     return [numbers length] > 0 ? [numbers intValue] : 0;
+}
+
+- (NSString *)handleCustomDelimiterWithinNumbers:(NSString *)numbers {
+    if (YES == [numbers hasPrefix:@"//"]) {
+        NSString *delimiter = [numbers substringWithRange:NSMakeRange(2, 1)];
+        NSString *suffix = [numbers substringWithRange:NSMakeRange(4, [numbers length] - 4)];
+        numbers = [suffix stringByReplacingOccurrencesOfString:delimiter withString:@","];
+    }
+    return numbers;
+}
+
+- (NSString *)handleNewlineDelimiterWithinNumbers:(NSString *)numbers {
+    return [numbers stringByReplacingOccurrencesOfString:@"\n" withString:@","];
 }
 
 - (BOOL)containsWithinNumbers:(NSString *)numbers delimiter:(NSString *)delimiter {
