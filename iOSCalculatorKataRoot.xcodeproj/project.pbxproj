@@ -12,6 +12,7 @@
 		CC9861741EAD99B5C1665DBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC986CEF7A7FE3066B5F938F /* Default-568h@2x.png */; };
 		CC9861C78293923812E2F249 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC986EC3B33120EF27019A7D /* SenTestingKit.framework */; };
 		CC98620BF0CDA734F2E6498F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC98686F0B4E1A8FD6EE67EC /* UIKit.framework */; };
+		CC98627DFAAE7B675F08CAEE /* ScientificCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = CC986B769A71B011E5B32573 /* ScientificCalculator.m */; };
 		CC98629B2E74BFFFD3404BF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC98686F0B4E1A8FD6EE67EC /* UIKit.framework */; };
 		CC9862ECEFB19D33DE411F94 /* EIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9866230FB96A7D36A041B7 /* EIViewController.m */; };
 		CC9866305D1DE34B5E852E0B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9860472D07BA50D6192787 /* Default.png */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC98601026E8AC58F3836D6A /* ScientificCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScientificCalculator.h; sourceTree = "<group>"; };
 		CC9860472D07BA50D6192787 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CC98608529C3FCA4D915E17A /* iOSCalculatorKataRoot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "iOSCalculatorKataRoot-Info.plist"; sourceTree = "<group>"; };
 		CC9860983C8412248466962C /* iOSCalculatorKataRoot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSCalculatorKataRoot-Prefix.pch"; sourceTree = "<group>"; };
@@ -52,7 +54,9 @@
 		CC9867556988656B343E951A /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		CC98686F0B4E1A8FD6EE67EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CC9868B91190F136DE2F0859 /* iOSCalculatorKataRootTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCalculatorKataRootTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC9869325E84E510D4740024 /* IScientificCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScientificCalculator.h; sourceTree = "<group>"; };
 		CC986999F81371B1907B2747 /* iOSCalculatorKataRootTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "iOSCalculatorKataRootTests-Info.plist"; sourceTree = "<group>"; };
+		CC986B769A71B011E5B32573 /* ScientificCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScientificCalculator.m; sourceTree = "<group>"; };
 		CC986BC72998F087FDD8142C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CC986BDF23D72CA12AE89C13 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
 		CC986CEF7A7FE3066B5F938F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -141,6 +145,9 @@
 				CC9866230FB96A7D36A041B7 /* EIViewController.m */,
 				CC9867556988656B343E951A /* Calculator.m */,
 				CC986BDF23D72CA12AE89C13 /* Calculator.h */,
+				CC9869325E84E510D4740024 /* IScientificCalculator.h */,
+				CC986B769A71B011E5B32573 /* ScientificCalculator.m */,
+				CC98601026E8AC58F3836D6A /* ScientificCalculator.h */,
 			);
 			path = iOSCalculatorKataRoot;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 				CC986024DFE4CEBCDFF8C3B8 /* EIAppDelegate.m in Sources */,
 				CC9862ECEFB19D33DE411F94 /* EIViewController.m in Sources */,
 				CC986DEE1083FA7C4D1EAD58 /* Calculator.m in Sources */,
+				CC98627DFAAE7B675F08CAEE /* ScientificCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

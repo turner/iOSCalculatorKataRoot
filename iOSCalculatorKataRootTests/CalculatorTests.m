@@ -1,5 +1,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "Calculator.h"
+#import "IScientificCalculator.h"
+#import "ScientificCalculator.h"
 
 @interface CalculatorTests : SenTestCase
 @end
@@ -75,6 +77,12 @@
 
     // verify
     STAssertEquals(sum, expect, nil);
+}
+
+-(void)test_ScientificCalculator_SanityTest {
+
+    id<IScientificCalculator>scientificCalculator = [[ScientificCalculator alloc] init];
+    STAssertNotNil(scientificCalculator, nil);
 }
 
 @end
