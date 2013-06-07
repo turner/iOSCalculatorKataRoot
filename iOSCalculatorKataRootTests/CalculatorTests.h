@@ -1,5 +1,5 @@
 //
-//  Test.h
+//  CalculatorTests.h
 //  iOSCalculatorKataRoot
 //
 //  Created by Douglass Turner on 06/07/13.
@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface Test : SenTestCase
+@interface CalculatorTests : SenTestCase
 
 @end
