@@ -36,4 +36,13 @@
     STAssertEquals(sum, expect, nil);
 }
 
+-(void)testInputIsTwoNumbersReturnsSum {
+
+    NSString *numbers = @"7,3";
+    int expect = 10;
+    int sum = [_sut add:numbers];
+
+    STAssertEquals(sum, expect, nil);
+}
+
 @end
